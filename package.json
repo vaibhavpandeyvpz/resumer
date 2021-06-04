@@ -10,6 +10,7 @@
   "name": "resumer",
   "private": true,
   "scripts": {
+    "build": "cd portal && yarn install && npm run build && rm -rf public && mv build ../public",
     "start": "cross-env DEBUG=resumer:* node ./bin/www"
   }
 }
