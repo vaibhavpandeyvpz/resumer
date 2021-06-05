@@ -13,10 +13,10 @@ To build & run the app locally, run below commands after cloning the project:
 yarn install
 
 # build from sources
-yarn run build
+npm run build
 
 # start the server
-yarn start
+npm start
 ```
 
 ### License

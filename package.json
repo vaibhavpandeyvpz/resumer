@@ -12,7 +12,7 @@
   "name": "resumer",
   "private": true,
   "scripts": {
-    "build": "cd portal && yarn install && npm run build && rm -rf ../public && mv build ../public",
+    "build": "cd portal && yarn install && npm run build && npx shx rm -rf ../public && npx shx mv build ../public",
     "start": "cross-env DEBUG=resumer:* node ./bin/www",
     "test": "mocha --recursive"
   }
