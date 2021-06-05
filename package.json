@@ -5,12 +5,15 @@
     "morgan": "~1.9.1"
   },
   "devDependencies": {
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "mocha": "^8.4.0",
+    "supertest": "^6.1.3"
   },
   "name": "resumer",
   "private": true,
   "scripts": {
     "build": "cd portal && yarn install && npm run build && rm -rf ../public && mv build ../public",
-    "start": "cross-env DEBUG=resumer:* node ./bin/www"
+    "start": "cross-env DEBUG=resumer:* node ./bin/www",
+    "test": "mocha --recursive"
   }
 }
