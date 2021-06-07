@@ -3,13 +3,13 @@ import { createSlice, configureStore } from '@reduxjs/toolkit'
 const resumeSlice = createSlice({
   name: 'resume',
   initialState: {
-    // Basic details
+    // Basic
     'name': '',
     'gender': 'undisclosed',
     'bio': '',
-    // Educational qualifications
+    // Education
     'qualifications': [],
-    // Professional experiences
+    // Experiences
     'experiences': [],
     // Skills
     'skills': [],
@@ -19,7 +19,7 @@ const resumeSlice = createSlice({
     'hobbies': [],
     // Links
     'links': [],
-    // Contact information
+    // Contact
     'email': '',
     'phone': '',
     'address': '',
@@ -28,13 +28,13 @@ const resumeSlice = createSlice({
     'zip': '',
   },
   reducers: {
-    // Basic details
+    // Basic
     updateBasicDetails(state, { payload }) {
       state.name = payload.name || '';
       state.gender = payload.gender || '';
       state.bio = payload.bio || ''
     },
-    // Educational qualifications
+    // Education
     addQualification(state, { payload }) {
       state.qualifications.push(payload)
     },
@@ -44,7 +44,7 @@ const resumeSlice = createSlice({
     removeQualification(state, { payload }) {
       state.qualifications.splice(payload, 1)
     },
-    // Professional experiences
+    // Experiences
     addExperience(state, { payload }) {
       state.experiences.push(payload)
     },
@@ -94,7 +94,7 @@ const resumeSlice = createSlice({
     removeLink(state, { payload }) {
       state.links.splice(payload, 1)
     },
-    // Contact information
+    // Contact
     updateContactInformation(state, { payload }) {
       state.email = payload.email || '';
       state.phone = payload.phone || '';
