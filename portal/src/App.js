@@ -15,6 +15,7 @@ export default function App() {
         <h1>Resumer</h1>
         <p className="mb-3 mb-lg-5">
           Create your <strong>100% free</strong> online resume and download as PDF instantly.
+          The resume details are saved in your browser (not on server) so that you can easily edit it later.
         </p>
         <div className="mb-3 mb-lg-5">
           <BasicSection />
@@ -60,8 +61,8 @@ export default function App() {
             </div>
           </div>
         </div>
-        <button className="btn btn-primary">
-          <i className="bi-arrow-clockwise" /> Generate
+        <button className="btn btn-primary btn-lg">
+          <i className="bi-arrow-clockwise me-1" /> Generate
         </button>
       </main>
       <footer className="container mb-3 mb-lg-5">
