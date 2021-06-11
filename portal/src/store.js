@@ -58,18 +58,12 @@ const resumeSlice = createSlice({
     addSkill(state, { payload }) {
       state.skills.push(payload)
     },
-    updateSkill(state, { payload }) {
-      state.skills.map((o, i) => i === payload.id ? payload.data : o)
-    },
     removeSkill(state, { payload }) {
       state.skills.splice(payload, 1)
     },
     // Languages
     addLanguage(state, { payload }) {
       state.languages.push(payload)
-    },
-    updateLanguage(state, { payload }) {
-      state.languages.map((o, i) => i === payload.id ? payload.data : o)
     },
     removeLanguage(state, { payload }) {
       state.languages.splice(payload, 1)
@@ -78,18 +72,12 @@ const resumeSlice = createSlice({
     addHobby(state, { payload }) {
       state.hobbies.push(payload)
     },
-    updateHobby(state, { payload }) {
-      state.hobbies.map((o, i) => i === payload.id ? payload.data : o)
-    },
     removeHobby(state, { payload }) {
       state.hobbies.splice(payload, 1)
     },
     // Links
     addLink(state, { payload }) {
       state.links.push(payload)
-    },
-    updateLink(state, { payload }) {
-      state.links.map((o, i) => i === payload.id ? payload.data : o)
     },
     removeLink(state, { payload }) {
       state.links.splice(payload, 1)
