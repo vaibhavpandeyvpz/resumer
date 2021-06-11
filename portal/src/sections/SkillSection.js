@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { addSkill, removeSkill } from '../store';
+import React, { useState } from 'react'
+import { connect } from 'react-redux'
+import { addSkill, removeSkill } from '../store'
 
 const SkillSection = ({ skills, addSkill, removeSkill }) => {
   const [skill, setSkill] = useState('')
@@ -23,20 +23,20 @@ const SkillSection = ({ skills, addSkill, removeSkill }) => {
           Mention all your professional skills e.g., copy writing, graphic designing, ethical hacking etc.
         </p>
       </div>
-      {skills.length > 0 ? (
-        <ul className="list-group list-group-flush border-top">
-          {skills.map((skill, i) => (
-            <li className="list-group-item" key={`skill-${i}`}>
-              <div className="d-flex justify-content-between">
-                <span>{i + 1}. {skill}</span>
-                <a className="text-danger" href="" onClick={e => handleRemoveClick(e, i)}>
-                  <i className="bi-trash" />
-                </a>
-              </div>
-            </li>
-          ))}
-        </ul>
-      ) : null}
+      {skills.length > 0
+        ? (
+          <ul className="list-group list-group-flush border-top">
+            {skills.map((skill, i) => (
+              <li className="list-group-item" key={`skill-${i}`}>
+                <div className="d-flex justify-content-between">
+                  <span>{i + 1}. {skill}</span>
+                  <i className="bi-trash text-danger" onClick={e => handleRemoveClick(e, i)} />
+                </div>
+              </li>
+            ))}
+          </ul>
+          )
+        : null}
       <div className="card-body border-top">
         <form onSubmit={handleFormSubmit}>
           <div className="form-floating mb-3">

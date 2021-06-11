@@ -1,7 +1,9 @@
-import React from 'react';
+import React from 'react'
 
-export default () => (
-  <div className="card border-0 shadow-sm">
-    <div className="card-body" />
-  </div>
-)
+export default function BasicSection() {
+  return (
+    <div className="card border-0 shadow-sm">
+      <div className="card-body" />
+    </div>
+  )
+}

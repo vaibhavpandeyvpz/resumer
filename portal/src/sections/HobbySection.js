@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { addHobby, removeHobby } from '../store';
+import React, { useState } from 'react'
+import { connect } from 'react-redux'
+import { addHobby, removeHobby } from '../store'
 
 const HobbySection = ({ hobbies, addHobby, removeHobby }) => {
   const [hobby, setHobby] = useState('')
@@ -23,20 +23,20 @@ const HobbySection = ({ hobbies, addHobby, removeHobby }) => {
           Put any hobbies you may have e.g., drawing sketches, listening to music or as cool as street racing.
         </p>
       </div>
-      {hobbies.length > 0 ? (
+      {hobbies.length > 0
+        ? (
         <ul className="list-group list-group-flush border-top">
           {hobbies.map((hobby, i) => (
             <li className="list-group-item" key={`hobby-${i}`}>
               <div className="d-flex justify-content-between">
                 <span>{i + 1}. {hobby}</span>
-                <a className="text-danger" href="" onClick={e => handleRemoveClick(e, i)}>
-                  <i className="bi-trash" />
-                </a>
+                <i className="bi-trash text-danger" onClick={e => handleRemoveClick(e, i)} />
               </div>
             </li>
           ))}
         </ul>
-      ) : null}
+          )
+        : null}
       <div className="card-body border-top">
         <form onSubmit={handleFormSubmit}>
           <div className="form-floating mb-3">

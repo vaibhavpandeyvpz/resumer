@@ -28,7 +28,8 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "root": true
   },
   "private": true,
   "scripts": {

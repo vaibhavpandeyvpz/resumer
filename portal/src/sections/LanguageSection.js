@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { addLanguage, removeLanguage } from '../store';
+import React, { useState } from 'react'
+import { connect } from 'react-redux'
+import { addLanguage, removeLanguage } from '../store'
 
 const LanguageSection = ({ languages, addLanguage, removeLanguage }) => {
   const [language, setLanguage] = useState('')
@@ -21,20 +21,20 @@ const LanguageSection = ({ languages, addLanguage, removeLanguage }) => {
         <h5 className="card-title">Languages</h5>
         <p className="card-text">It's always nice to mentioned add languages you can understand, speak and write.</p>
       </div>
-      {languages.length > 0 ? (
+      {languages.length > 0
+        ? (
         <ul className="list-group list-group-flush border-top">
           {languages.map((language, i) => (
             <li className="list-group-item" key={`language-${i}`}>
               <div className="d-flex justify-content-between">
                 <span>{i + 1}. {language}</span>
-                <a className="text-danger" href="" onClick={e => handleRemoveClick(e, i)}>
-                  <i className="bi-trash" />
-                </a>
+                <i className="bi-trash text-danger" onClick={e => handleRemoveClick(e, i)} />
               </div>
             </li>
           ))}
         </ul>
-      ) : null}
+          )
+        : null}
       <div className="card-body border-top">
         <form onSubmit={handleFormSubmit}>
           <div className="form-floating mb-3">
