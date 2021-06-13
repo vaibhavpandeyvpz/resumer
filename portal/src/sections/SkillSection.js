@@ -22,7 +22,7 @@ const SkillSection = ({ skills, addSkill, removeSkill }) => {
   return (
     <div className="card border-0 shadow-sm">
       <div className="card-body">
-        <h5 className="card-title">Skills</h5>
+        <h5 className="card-title text-primary text-decoration-underline">Skills</h5>
         <p className="card-text">
           Mention all your professional skills e.g., copy writing, graphic designing, ethical hacking etc.
         </p>
@@ -53,7 +53,7 @@ const SkillSection = ({ skills, addSkill, removeSkill }) => {
             {error ? <div className="invalid-feedback">{error}</div> : null}
             <label htmlFor="skill-name">Skill name</label>
           </div>
-          <button className="btn btn-success">
+          <button className="btn btn-secondary">
             <i className="bi-plus-lg me-1" /> Save
           </button>
         </form>

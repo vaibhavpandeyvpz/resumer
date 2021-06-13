@@ -22,7 +22,7 @@ const HobbySection = ({ hobbies, addHobby, removeHobby }) => {
   return (
     <div className="card border-0 shadow-sm">
       <div className="card-body">
-        <h5 className="card-title">Hobbies</h5>
+        <h5 className="card-title text-primary text-decoration-underline">Hobbies</h5>
         <p className="card-text">
           Put any hobbies you may have e.g., drawing sketches, listening to music or anything cooler.
         </p>
@@ -53,7 +53,7 @@ const HobbySection = ({ hobbies, addHobby, removeHobby }) => {
             {error ? <div className="invalid-feedback">{error}</div> : null}
             <label htmlFor="hobby-name">Hobby name</label>
           </div>
-          <button className="btn btn-success">
+          <button className="btn btn-secondary">
             <i className="bi-plus-lg me-1" /> Save
           </button>
         </form>

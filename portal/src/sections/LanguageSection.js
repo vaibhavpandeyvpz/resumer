@@ -22,7 +22,7 @@ const LanguageSection = ({ languages, addLanguage, removeLanguage }) => {
   return (
     <div className="card border-0 shadow-sm">
       <div className="card-body">
-        <h5 className="card-title">Languages</h5>
+        <h5 className="card-title text-primary text-decoration-underline">Languages</h5>
         <p className="card-text">It's always nice to mention languages you can speak and write e.g., Hindi, English etc.</p>
       </div>
       {languages.length > 0
@@ -51,7 +51,7 @@ const LanguageSection = ({ languages, addLanguage, removeLanguage }) => {
             {error ? <div className="invalid-feedback">{error}</div> : null}
             <label htmlFor="language-name">Language name</label>
           </div>
-          <button className="btn btn-success">
+          <button className="btn btn-secondary">
             <i className="bi-plus-lg me-1" /> Save
           </button>
         </form>
