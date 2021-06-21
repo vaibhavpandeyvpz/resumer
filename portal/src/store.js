@@ -1,32 +1,39 @@
 import { createSlice, configureStore } from '@reduxjs/toolkit'
+import storage from 'store2'
+
+const STORAGE_KEY = 'resume'
+
+const defaults = {
+  // Basic
+  name: '',
+  gender: 'undisclosed',
+  bio: '',
+  // Education
+  qualifications: [],
+  // Experiences
+  experiences: [],
+  // Skills
+  skills: [],
+  // Languages
+  languages: [],
+  // Hobbies
+  hobbies: [],
+  // Links
+  links: [],
+  // Contact
+  email: '',
+  phone: '',
+  address: '',
+  city: '',
+  country: 'IN',
+  zip: ''
+}
+
+const initialState = storage.get(STORAGE_KEY)
 
 const resumeSlice = createSlice({
   name: 'resume',
-  initialState: {
-    // Basic
-    name: '',
-    gender: 'undisclosed',
-    bio: '',
-    // Education
-    qualifications: [],
-    // Experiences
-    experiences: [],
-    // Skills
-    skills: [],
-    // Languages
-    languages: [],
-    // Hobbies
-    hobbies: [],
-    // Links
-    links: [],
-    // Contact
-    email: '',
-    phone: '',
-    address: '',
-    city: '',
-    country: 'IN',
-    zip: ''
-  },
+  initialState: initialState ? JSON.parse(initialState) : defaults,
   reducers: {
     // Basic
     updateBasicDetails (state, { payload }) {
@@ -88,7 +95,7 @@ const resumeSlice = createSlice({
       state.phone = payload.phone || ''
       state.address = payload.address || ''
       state.city = payload.city || ''
-      state.country = payload.country || ''
+      state.country = payload.country || 'IN'
       state.zip = payload.zip || ''
     }
   }
@@ -117,4 +124,10 @@ export const {
   updateContactInformation
 } = resumeSlice.actions
 
-export default configureStore({ reducer: resumeSlice.reducer })
+const store = configureStore({ reducer: resumeSlice.reducer })
+
+store.subscribe(() => {
+  storage.set(STORAGE_KEY, JSON.stringify(store.getState()))
+})
+
+export default store
